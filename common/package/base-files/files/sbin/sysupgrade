@@ -73,7 +73,7 @@ Usage: $0 [<upgrade-option>...] <image file or URL>
        $0 [-q] [-i] [-c] [-u] [-o] [-k] [-P] <backup-command> <file>
 
 upgrade-option:
-	-f <config>  restore configuration from .tar.gz (file or url)
+	-f <config>  restore configuration from .YJOS (file or url)
 	-i           interactive mode
 	-c           attempt to preserve all changed files in /etc/
 	-o           attempt to preserve all changed files in /, except those
@@ -221,6 +221,8 @@ build_list_of_backup_overlay_files() {
 		-e '\,^/etc/urandom.seed$,d' \
 		-e "\,^$INSTALLED_PACKAGES$,d" \
 		-e '\,^/usr/lib/opkg/.*,d' \
+		-e '\,^/etc/passwd$,d' \
+		-e '\,^/etc/shadow$,d' \
 	) | grep -v -x -F -f $packagesfiles > "$file"
 
 	rm -f "$packagesfiles"
