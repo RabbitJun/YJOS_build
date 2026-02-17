@@ -2,7 +2,7 @@
 ![Latest tag](https://img.shields.io/github/tag/ysurac/openmptcprouter-feeds.svg)
 
 
-# OpenMPTCProuter Next
+# OpenMPTCProuter
 
 OpenMPTCProuter is an open source solution to aggregate and encrypt multiple internet connections and terminates it over any VPS which make clients benefit security, reliability, net neutrality, as well as dedicated public IP.
 
